@@ -1,0 +1,9 @@
+{
+    "license": "Creative Commons",
+    "script": "
+    point x:1/4 y:2/5 as A
+    toward A 12/45u as B
+    "
+}
+
+

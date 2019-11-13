@@ -1,10 +1,10 @@
 {
-    "name": "bamboo-swing-gesture",
-    "displayName": "Bamboo Swing Gesture",
-    "description": "Bamboo Swing Gesture file format",
+    "name": "bambooswing",
+    "displayName": "bambooswing",
+    "description": "Bamboo Swing Gesture",
     "version": "0.0.1",
     "engines": {
-        "vscode": "^1.39.0"
+        "vscode": "^1.40.0"
     },
     "categories": [
         "Programming Languages"
@@ -12,14 +12,14 @@
     "contributes": {
         "languages": [{
             "id": "bambooswing",
-            "aliases": ["bamboo swing Core"],
-            "extensions": [".bambooswing.txt"],
+            "aliases": ["Bamboo Swing Gesture", "bambooswing"],
+            "extensions": [".bambooswing"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
             "language": "bambooswing",
             "scopeName": "source.bambooswing",
-            "path": "./syntaxes/bamboo-swing.tmLanguage.json"
+            "path": "./syntaxes/bambooswing.tmLanguage.json"
         }]
     }
 }
