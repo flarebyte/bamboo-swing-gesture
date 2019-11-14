@@ -13,7 +13,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.bambooswing",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "^(license|title|description|attribution-name|attribution-url),[a-z]{2}(-[a-z]{2})?:"
 			}]
 		},
 		"strings": {
