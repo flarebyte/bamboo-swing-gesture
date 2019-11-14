@@ -26,3 +26,6 @@ build: build-directory html js
 
 start:
 	cd docs;python -m SimpleHTTPServer 7000
+
+syntax-color:
+	ln -s "`pwd`/vscode/bambooswing" ~/.vscode/extensions/bambooswing-0.0.1
