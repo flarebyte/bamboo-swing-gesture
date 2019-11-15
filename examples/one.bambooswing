@@ -8,7 +8,13 @@ description,en: Single line description
 metadata-url,rdf,en: http://website.com/meta
 homepage-url,markdown,en: https://github.com/owner/project#readme
 requires: points
------
+--- Params ---
+$a: bool
+$b: bool,seq
+$c: bool: _ > 0;
+$d: fraction: _ >= -1 && _ <= 1 && _ != 0; seq: _ > 1 && _ < 10
+$e: (fraction: _ > 0; fraction: _ > 0); seq: _ > 1 && _ < 
+
 point x:1/4 y:2/5
 toward A 12/45u as B
 
