@@ -1,8 +1,13 @@
+id-urn: company7/project12/1235775
 license,en: Creative Commons
+license-url,json,en: http://website.com/license
 attribution-name,en-gb: Firstname LastName
-attribution-url,en: http://website.com/creator
+attribution-url,html,en: http://website.com/creator
 title,en: My title
 description,en: Single line description
+metadata-url,rdf,en: http://website.com/meta
+homepage-url,markdown,en: https://github.com/owner/project#readme
+requires: points
 -----
 point x:1/4 y:2/5
 toward A 12/45u as B

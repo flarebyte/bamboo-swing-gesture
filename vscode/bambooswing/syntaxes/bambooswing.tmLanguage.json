@@ -6,6 +6,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#keyword-urls"
+		},
+		{
 			"include": "#strings"
 		}
 	],
@@ -13,7 +16,13 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.bambooswing",
-				"match": "^(license|title|description|attribution-name|attribution-url),[a-z]{2}(-[a-z]{2})?:"
+				"match": "^(license|title|description|attribution-name),[a-z]{2}(-[a-z]{2})?:"
+			}]
+		},
+		"keyword-urls": {
+			"patterns": [{
+				"name": "keyword.control.bambooswing",
+				"match": "^(attribution-url|license-url|metadata-url|homepage-url),(html|json|markdown|rdf),[a-z]{2}(-[a-z]{2})?: (https?://|git)"
 			}]
 		},
 		"strings": {
