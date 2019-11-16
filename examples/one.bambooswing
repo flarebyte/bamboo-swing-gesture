@@ -7,7 +7,6 @@ title,en: My title
 description,en: Single line description
 metadata-url,rdf,en: http://website.com/meta
 homepage-url,markdown,en: https://github.com/owner/project#readme
-requires: points
 --- Inputs ---
 $A: Single; Bits(5);
 $A = b10101
@@ -45,10 +44,18 @@ fibonacciList: Integer -> List Integer
 fibonacciList x =
     List.map nextFibonacci (List.range 1 x)
 
+pointA: (Fraction, Fraction)
+pointA = (1/4, 3/7)
+
+distanceA: Fraction
+distanceA = 1/4
+
 --- Gestures ---
+pointB: (Fraction, Fraction)
 
 drawArm =
-    Drawer.
-toward A 12/45u as B
+    |> Draw.toward pointA distanceA
+
+pointB = Draw.asPoint drawArm
 
 
