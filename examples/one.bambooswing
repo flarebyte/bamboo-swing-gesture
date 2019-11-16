@@ -8,13 +8,32 @@ description,en: Single line description
 metadata-url,rdf,en: http://website.com/meta
 homepage-url,markdown,en: https://github.com/owner/project#readme
 requires: points
---- Params ---
-$a: maybe; bool: default (false)
-$b: seq: range (1 to 12); bool
-$d: seq: range (1 to 10); fraction: range (-1 to 1/3 or 2/3 to 1) and not (-1 or 0 or 1/12) 
-$e: seq: (1 to 10); fraction: range (0 to 1); fraction: range (0 to 1) 
-$f: single; fraction: enum (1/2, 1/3, 1/5, 1/8)
-$g: maybe; integer: enum (1, 3, 5) default (3)
+--- Inputs ---
+$A: single; bits(5);
+$A = b10101
+
+$B: seq: range (1 to 12); bits(3)
+$B = [b101, b100]
+
+$D: seq: range (1 to 10); fraction: range (-1 to 1/3 or 2/3 to 1) and not (-1 or 0 or 1/12)
+$D = [-1/3, -2/3]
+
+$E: seq: (1 to 10); fraction: range (0 to 1); fraction: range (0 to 1)
+$E = [(1/3, 1/4), (1/4, 1/5)]
+
+$F: single; fraction: enum (1/2, 1/3, 1/5, 1/8)
+$F = 1/3
+
+$G: single; integer: enum (1, 3, 5)
+$G = 3
+
+$H: single; entity
+
+--- Constants ---
+$myRatios: seq; fraction: range (-1 to 1)
+$myRatios = [-1, -1/6, 0, 1/3, 1/4]
+
+--- Formulas ---
 
 point x:1/4 y:2/5
 toward A 12/45u as B
