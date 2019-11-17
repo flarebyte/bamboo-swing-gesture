@@ -44,18 +44,33 @@ fibonacciList: Integer -> List Integer
 fibonacciList x =
     List.map nextFibonacci (List.range 1 x)
 
-pointA: (Fraction, Fraction)
+pointA: Point
 pointA = (1/4, 3/7)
 
 distanceA: Fraction
 distanceA = 1/4
 
---- Gestures ---
-pointB: (Fraction, Fraction)
+-- type Vector = { dr: Fractal, dt: Fractal }
+-- type Point = { r: Fractal, t: Fractal} | 
 
-drawArm =
-    |> Draw.toward pointA distanceA
+singlePoint: Point
+singlePoint = fromPoint (0, 0) |> toward (pointA, distanceA)
 
-pointB = Draw.asPoint drawArm
+--- Points ---
+
+points: Nodes
+points = 
+    id:a/b/3 := P(1/4, 3/7)
+    id:a/b/4 := P(1/5, 3/7)
+
+
+edges: Edges
+edges =
+    id:a/b/3 -> id:a/b/4 := Bezier1
+    id:a/b/3 -> id:a/b/6 := Bezier2
+    id:a/b/3 -> id:a/b/5 := Link
+
+
+
 
 
