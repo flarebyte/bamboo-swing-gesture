@@ -24,24 +24,29 @@ $H: Single; entity
 
 --- Points ---
 
-type EdgeType = Bezier1 | Bezier2 | Link1 | Link2
+edgeTypes: EdgeTypes
+edgeTypes =
+    t:h/1 := Flow
+    t:h/1/b := BezierFirst
+    t:h/2 := Flow
+    t:h/3 := BiDirFlow
 
 points: Nodes
 points = 
-    id:a/b/2 := Translate(id:0, 1/3, 2/7)
-    id:a/b/3 := Translate(id:0, 1/4, 3/7)
-    id:a/b/4 := Translate(id:a/b/3, 1/5, 6/7)
-    id:a/b/5 := Translate(id:a/b/4, 1/5, 6/7)
-    id:a/b/6 := Line(id:a/b/4, id:a/b/5) Line(id:a/b/6, id:a/b/2) |> Inter
-    id:a/b/7 := Line(id:a/b/4, id:a/b/5) Circle(id:a/b/6, 3/4) |> Inter
-    id:a/b/7 := Circle(id:a/b/4, 4/5) Circle(id:a/b/6, 3/4) |> Inter
-    id:a/b/8 := Bezier(id:a/b/1, id:a/b/2, id:a/b/2) Circle(id:a/b/6, 3/4) |> Inter
-    id:a/b/9 := Bezier(id:a/b/1, id:a/b/2, id:a/b/3, id:a/b/4) Circle(id:a/b/6, 3/4) |> Inter
+    p:a/b/2 := Translate(p:0, 1/3, 2/7)
+    p:a/b/3 := Translate(p:0, 1/4, 3/7)
+    p:a/b/4 := Translate(p:a/b/3, 1/5, 6/7)
+    p:a/b/5 := Translate(p:a/b/4, 1/5, 6/7)
+    p:a/b/6 := Line(p:a/b/4, p:a/b/5) Line(p:a/b/6, p:a/b/2) |> Inter
+    p:a/b/7 := Line(p:a/b/4, p:a/b/5) Circle(p:a/b/6, 3/4) |> Inter
+    p:a/b/7 := Circle(p:a/b/4, 4/5) Circle(p:a/b/6, 3/4) |> Inter
+    p:a/b/8 := Bezier(p:a/b/1, p:a/b/2, p:a/b/2) Circle(p:a/b/6, 3/4) |> Inter
+    p:a/b/9 := Bezier(p:a/b/1, p:a/b/2, p:a/b/3, p:a/b/4) Circle(p:a/b/6, 3/4) |> Inter
     
 edges: Edges
 edges =
-    id:a/b/3 -> id:a/b/4 := Bezier1
-    id:a/b/3 -> id:a/b/6 := Bezier2
-    id:a/b/3 -> id:a/b/5 := Link2, Bezier1 if b1??01 in $A
+    id:a/b/3 -> id:a/b/4 := t:h/1
+    id:a/b/3 -> id:a/b/6 := t:h/2
+    id:a/b/3 -> id:a/b/5 := t:h/1/b, t:h/2 if b1??01 in $A
 
 
