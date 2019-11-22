@@ -9,7 +9,13 @@
 			"include": "#keyword-urls"
 		},
 		{
-			"include": "#strings"
+			"include": "#urls"
+		},
+		{
+			"include": "#key-types"
+		},
+		{
+			"include": "#classes"
 		}
 	],
 	"repository": {
@@ -22,19 +28,26 @@
 		"keyword-urls": {
 			"patterns": [{
 				"name": "keyword.control.bambooswing",
-				"match": "^(attribution-url|license-url|metadata-url|homepage-url),(html|json|markdown|rdf),[a-z]{2}(-[a-z]{2})?: (https?://|git)"
+				"match": "^(attribution-url|license-url|metadata-url|homepage-url),(html|json|markdown|rdf),[a-z]{2}(-[a-z]{2})?:"
 			}]
 		},
-		"strings": {
-			"name": "string.quoted.double.bambooswing",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.bambooswing",
-					"match": "\\\\."
-				}
-			]
+		"urls": {
+			"patterns": [{
+				"name": "markup.underline.link.bambooswing",
+				"match": "\bhttps://[^\\s]+$"
+			}]
+		},
+		"key-types": {
+			"patterns": [{
+				"name": "keyword.control.bambooswing",
+				"match": "^(settings: Settings|nodeTypes: NodeTypes|edgeTypes: EdgeTypes|points: Nodes|edges: Edges) ="
+			}]
+		},
+		"classes": {
+			"patterns": [{
+				"name": "entity.name.class.bambooswing",
+				"match": "\\b(Enum|Translate|Line|Circle|Inter|Bezier)\\b"
+			}]
 		}
 	},
 	"scopeName": "source.bambooswing"
