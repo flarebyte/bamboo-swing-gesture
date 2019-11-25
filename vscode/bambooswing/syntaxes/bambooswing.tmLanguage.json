@@ -1,72 +1,112 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Bamboo Swing Gesture",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#keyword-urls"
-		},
-		{
-			"include": "#urls"
-		},
-		{
-			"include": "#key-types"
-		},
-		{
-			"include": "#classes"
-		},
-		{
-			"include": "#refs"
-		},
-		{
-			"include": "#fractions"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.bambooswing",
-				"match": "^(license|title|description|attribution-name),[a-z]{2}(-[a-z]{2})?:"
-			}]
-		},
-		"keyword-urls": {
-			"patterns": [{
-				"name": "keyword.control.bambooswing",
-				"match": "^(attribution-url|license-url|metadata-url|homepage-url),(html|json|markdown|rdf),[a-z]{2}(-[a-z]{2})?:"
-			}]
-		},
-		"urls": {
-			"patterns": [{
-				"name": "markup.underline.link.bambooswing",
-				"match": "\bhttps://[^\\s]+$"
-			}]
-		},
-		"key-types": {
-			"patterns": [{
-				"name": "keyword.control.bambooswing",
-				"match": "^(settings: Settings|nodeTypes: NodeTypes|edgeTypes: EdgeTypes|points: Nodes|edges: Edges) ="
-			}]
-		},
-		"classes": {
-			"patterns": [{
-				"name": "entity.name.class.bambooswing",
-				"match": "\\b(Enum|Translate|Line|Circle|Inter|Bezier)\\b"
-			}]
-		},
-		"refs": {
-			"patterns": [{
-				"name": "variable.name.bambooswing",
-				"match": "\\b(p|s|nt|et):\\d{3}\\b"
-			}]
-		},
-		"fractions": {
-			"patterns": [{
-				"name": "constant.numeric.bambooswing",
-				"match": "\\b\\d+(\\\\d+)?\\b"
-			}]
-		}
-	},
-	"scopeName": "source.bambooswing"
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Bamboo Swing Gesture",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#keyword-urls"
+    },
+    {
+      "include": "#urls"
+    },
+    {
+      "include": "#key-types"
+    },
+    {
+      "include": "#classes"
+    },
+    {
+      "include": "#refs"
+    },
+    {
+      "include": "#fractions"
+    },
+    {
+      "include": "#enum-value"
+    },
+    {
+      "include": "#logic"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.bambooswing",
+          "match": "^(license|title|description|attribution-name),[a-z]{2}(-[a-z]{2})?:"
+        },
+        {
+          "name": "keyword.control.bambooswing",
+          "match": "^(id-urn):"
+        }
+      ]
+    },
+    "keyword-urls": {
+      "patterns": [
+        {
+          "name": "keyword.control.bambooswing",
+          "match": "^(attribution-url|license-url|metadata-url|homepage-url),(html|json|markdown|rdf),[a-z]{2}(-[a-z]{2})?:"
+        }
+      ]
+    },
+    "urls": {
+      "patterns": [
+        {
+          "name": "markup.underline.link.bambooswing",
+          "match": "\bhttps://[^\\s]+$"
+        }
+      ]
+    },
+    "key-types": {
+      "patterns": [
+        {
+          "name": "keyword.control.bambooswing",
+          "match": "^(settings: Settings|nodeTypes: NodeTypes|edgeTypes: EdgeTypes|points: Nodes|edges: Edges) ="
+        }
+      ]
+    },
+    "classes": {
+      "patterns": [
+        {
+          "name": "entity.name.class.bambooswing",
+          "match": "\\b(Enum|Translate|Line|Circle|Inter|Bezier)\\b"
+        }
+      ]
+    },
+    "refs": {
+      "patterns": [
+        {
+          "name": "variable.name.bambooswing",
+          "match": "\\b(p|s|nt|et):\\d{3}\\b"
+        }
+      ]
+    },
+    "fractions": {
+      "patterns": [
+        {
+          "name": "constant.numeric.bambooswing",
+          "match": "\\b\\d+(\\\\d+)?\\b"
+        }
+      ]
+    },
+    "enum-value": {
+      "patterns": [
+        {
+          "name": "entity.name.tag.bambooswing",
+          "match": "\\b([A-Z]\\w+)\\b"
+        }
+      ]
+    },
+    "logic": {
+      "patterns": [
+        {
+          "name": "keyword.other.bambooswing",
+          "match": "\\b(if|and|is)\\b"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.bambooswing"
 }
