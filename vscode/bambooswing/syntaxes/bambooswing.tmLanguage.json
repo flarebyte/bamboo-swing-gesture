@@ -16,6 +16,12 @@
 		},
 		{
 			"include": "#classes"
+		},
+		{
+			"include": "#refs"
+		},
+		{
+			"include": "#fractions"
 		}
 	],
 	"repository": {
@@ -47,6 +53,18 @@
 			"patterns": [{
 				"name": "entity.name.class.bambooswing",
 				"match": "\\b(Enum|Translate|Line|Circle|Inter|Bezier)\\b"
+			}]
+		},
+		"refs": {
+			"patterns": [{
+				"name": "variable.name.bambooswing",
+				"match": "\\b(p|s|nt|et):\\d{3}\\b"
+			}]
+		},
+		"fractions": {
+			"patterns": [{
+				"name": "constant.numeric.bambooswing",
+				"match": "\\b\\d+(\\\\d+)?\\b"
 			}]
 		}
 	},
