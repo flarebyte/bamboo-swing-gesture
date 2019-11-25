@@ -13,16 +13,27 @@ settings: Settings =
     s:002 := Enum(Left, Right)
     s:003 := Enum(South, North, West)
 
+nodeTypeOptions: TypeOptions
+nodeTypeOptions = Enum(Major, Minor, Intermediary)
+
 nodeTypes: NodeTypes =
     nt:001 := Major
     nt:002 := Minor
     nt:003 := Intermediary
+
+edgeTypeOptions: TypeOptions
+edgeTypeOptions = Enum(Flow, BezierFirst, Flow, BiDirFlow)
 
 edgeTypes: EdgeTypes =
     et:001 := Flow
     et:002 := BezierFirst
     et:003 := Flow
     et:004 := BiDirFlow
+
+widthValues: Width
+widthValues = 
+    w:1 := [1/4, 5/4, 6/7]
+    w:2 := [1/5, 5/4, 5/7]
 
 points: Nodes =
     p:002 := nt:001; Translate(p:000, 1/3, 2/7)
@@ -37,7 +48,7 @@ points: Nodes =
     
 edges: Edges =
     p:003 -> p:004 := et:001
-    p:003 -> p:006 := et:002
+    p:003 -> p:006 := et:002, w:1
     p:003 -> p:005 := et:004, et:002 if s:001 is Top and s:002 is Left 
 
 
