@@ -21,19 +21,23 @@ nodeTypes: NodeTypes =
     nt:002 := Minor
     nt:003 := Intermediary
 
-edgeTypeOptions: TypeOptions
-edgeTypeOptions = Enum(Flow, BezierFirst, Flow, BiDirFlow)
-
-edgeTypes: EdgeTypes =
-    et:001 := Flow
-    et:002 := BezierFirst
-    et:003 := Flow
-    et:004 := BiDirFlow
-
 widthValues: Width
 widthValues = 
     w:1 := [1/4, 5/4, 6/7]
     w:2 := [1/5, 5/4, 5/7]
+
+edgeTypeOptions: TypeOptions
+edgeTypeOptions = Enum(Blue, Green)
+
+edgeTypes: EdgeTypes =
+    et:001 := Blue
+    et:002 := Green
+    et:003 := Red
+    et:004 := Yellow
+
+variations: Variations =
+    w:1 if et:001
+    w:2 if et:001 and not et:002
 
 points: Nodes =
     p:002 := nt:001; Translate(p:000, 1/3, 2/7)
@@ -47,8 +51,7 @@ points: Nodes =
     p:010 := ; Bezier(p:001, p:002, p:003, p:004) Circle(p:006, 3/4) |> Inter
     
 edges: Edges =
-    p:003 -> p:004 := et:001
-    p:003 -> p:006 := et:002, w:1
-    p:003 -> p:005 := et:004, et:002 if s:001 is Top and s:002 is Left 
-
+    p:003 -> p:004 := et:001 -> Line(); et:002 -> Bezier(p:001,p:002); if s:001 is Top
+    p:003 -> p:006 := et:002
+    p:003 -> p:005 := et:004, et:002; if s:001 is Top and s:002 is Left 
 
