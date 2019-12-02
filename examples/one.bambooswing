@@ -13,20 +13,15 @@ settings: Settings =
     s:002 := Enum(Left_, Right_)
     s:003 := Enum(South_, North_, West_)
 
-edgeTypes: EdgeTypes =
-    et:001 := Blue10d15s if s:001 is Top
-    et:002 := Green05d05s10d10s
-    et:003 := Red04d04s if s:001 is Top and s:002 is Left 
-    et:004 := Yellow03d03s
+amplitudes: Amplitudes =
+    a:001 := Sparsity [1/4, 5/4, 6/7]
+    a:002 := Width [1/5, 5/4, 5/7]
 
-widthValues: Width
-widthValues = 
-    w:1 := [1/4, 5/4, 6/7]
-    w:2 := [1/5, 5/4, 5/7]
-    
-variations: Variations =
-    w:1 if et:001
-    w:2 if et:001 and not et:002
+rules: Rules =
+    Blue10d15s if s:001 is Top
+    Red04d04s if s:001 is Top and s:002 is Left
+    a:001 if Blue10d15s
+    a:002 if Blue10d15s and not Red04d04s
 
 points: Nodes =
     p:002 := ntA; Translate(p:000, 1/3, 2/7)
@@ -40,9 +35,9 @@ points: Nodes =
     p:010 := ; Bezier(p:001, p:002, p:003, p:004) Circle(p:006, 3/4) |> Inter
     
 edges: Edges =
-    p:003 -> p:004 := et:001 -> Line(); 
-    p:003 -> p:004 := et:002 -> Bezier(p:001,p:002);
-    p:003 -> p:006 := et:002
-    p:003 -> p:005 := et:004
-    p:003 -> p:005 := et:002
+    p:003 -> p:004 := Blue10d15s -> Line(); 
+    p:003 -> p:004 := Green05d05s10d10s -> Bezier(p:001,p:002);
+    p:003 -> p:006 := Red04d04s
+    p:003 -> p:005 := Yellow03d03s
+    p:003 -> p:005 := Green05d05s10d10s
 

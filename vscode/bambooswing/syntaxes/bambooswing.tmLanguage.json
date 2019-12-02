@@ -56,7 +56,7 @@
       "patterns": [
         {
           "name": "keyword.control.bambooswing",
-          "match": "^(settings: Settings|nodeTypes: NodeTypes|edgeTypes: EdgeTypes|points: Nodes|edges: Edges) ="
+          "match": "^(settings: Settings|amplitudes: Amplitudes|points: Nodes|edges: Edges) ="
         }
       ]
     },
@@ -73,6 +73,10 @@
         {
           "name": "entity.name.class.bambooswing",
           "match": "\\bnt[A-Z]\\b"
+        },
+        {
+          "name": "entity.name.class.bambooswing",
+          "match": "\\b(Width|Sparsity)\\b"
         }
       ]
     },
@@ -80,7 +84,7 @@
       "patterns": [
         {
           "name": "variable.name.bambooswing",
-          "match": "\\b(p|s|nt|et):\\d{3}\\b"
+          "match": "\\b(p|s|a):\\d{3}\\b"
         }
       ]
     },
