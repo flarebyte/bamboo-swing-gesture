@@ -9,17 +9,17 @@ metadata-url,rdf,en: http://website.com/meta
 homepage-url,markdown,en: https://github.com/owner/project#readme
 
 settings: Settings =
-    s:001 := Enum(Top, Bottom)
-    s:002 := Enum(Left, Right)
-    s:003 := Enum(South, North, West)
+    s:001 := Enum(Top_, Bottom_)
+    s:002 := Enum(Left_, Right_)
+    s:003 := Enum(South_, North_, West_)
 
 nodeTypeOptions: TypeOptions
-nodeTypeOptions = Enum(Major, Minor, Intermediary)
+nodeTypeOptions = Enum(TA, TB, TC)
 
 nodeTypes: NodeTypes =
-    nt:001 := Major
-    nt:002 := Minor
-    nt:003 := Intermediary
+    nt:001 := TA
+    nt:002 := TB
+    nt:003 := TC
 
 widthValues: Width
 widthValues = 
@@ -27,13 +27,13 @@ widthValues =
     w:2 := [1/5, 5/4, 5/7]
 
 edgeTypeOptions: TypeOptions
-edgeTypeOptions = Enum(Blue, Green)
+edgeTypeOptions = Enum(Blue10d15s, Green05d05s10d10s, Yellow03d03s, Red04d04s)
 
 edgeTypes: EdgeTypes =
-    et:001 := Blue
-    et:002 := Green
-    et:003 := Red
-    et:004 := Yellow
+    et:001 := Blue10d15s if s:001 is Top
+    et:002 := Green05d05s10d10s
+    et:003 := Red04d04s if s:001 is Top and s:002 is Left 
+    et:004 := Yellow03d03s
 
 variations: Variations =
     w:1 if et:001
@@ -51,7 +51,9 @@ points: Nodes =
     p:010 := ; Bezier(p:001, p:002, p:003, p:004) Circle(p:006, 3/4) |> Inter
     
 edges: Edges =
-    p:003 -> p:004 := et:001 -> Line(); et:002 -> Bezier(p:001,p:002); if s:001 is Top
+    p:003 -> p:004 := et:001 -> Line(); 
+    p:003 -> p:004 := et:002 -> Bezier(p:001,p:002);
     p:003 -> p:006 := et:002
-    p:003 -> p:005 := et:004, et:002; if s:001 is Top and s:002 is Left 
+    p:003 -> p:005 := et:004
+    p:003 -> p:005 := et:002
 
