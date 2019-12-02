@@ -13,37 +13,26 @@ settings: Settings =
     s:002 := Enum(Left_, Right_)
     s:003 := Enum(South_, North_, West_)
 
-nodeTypeOptions: TypeOptions
-nodeTypeOptions = Enum(TA, TB, TC)
-
-nodeTypes: NodeTypes =
-    nt:001 := TA
-    nt:002 := TB
-    nt:003 := TC
-
-widthValues: Width
-widthValues = 
-    w:1 := [1/4, 5/4, 6/7]
-    w:2 := [1/5, 5/4, 5/7]
-
-edgeTypeOptions: TypeOptions
-edgeTypeOptions = Enum(Blue10d15s, Green05d05s10d10s, Yellow03d03s, Red04d04s)
-
 edgeTypes: EdgeTypes =
     et:001 := Blue10d15s if s:001 is Top
     et:002 := Green05d05s10d10s
     et:003 := Red04d04s if s:001 is Top and s:002 is Left 
     et:004 := Yellow03d03s
 
+widthValues: Width
+widthValues = 
+    w:1 := [1/4, 5/4, 6/7]
+    w:2 := [1/5, 5/4, 5/7]
+    
 variations: Variations =
     w:1 if et:001
     w:2 if et:001 and not et:002
 
 points: Nodes =
-    p:002 := nt:001; Translate(p:000, 1/3, 2/7)
-    p:003 := nt:002; Translate(p:000, 1/4, 3/7)
+    p:002 := ntA; Translate(p:000, 1/3, 2/7)
+    p:003 := ntB; Translate(p:000, 1/4, 3/7)
     p:004 := ;Translate(p:003, 1/5, 6/7)
-    p:005 := nt:002; Translate(p:4, 1/5, 6/7)
+    p:005 := ntC; Translate(p:4, 1/5, 6/7)
     p:006 := ; Line(p:004, p:005) Line(p:006, p:002 |> Inter
     p:007 := ; Line(p:004, p:005) Circle(p:006, 3/4) |> Inter
     p:008 := ; Circle(p:004, 4/5) Circle(p:006, 3/4) |> Inter

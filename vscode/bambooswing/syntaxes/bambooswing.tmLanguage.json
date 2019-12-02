@@ -69,6 +69,10 @@
         {
           "name": "entity.name.class.bambooswing",
           "match": "\\b(LightGray|DarkGray|Red|Purple|Blue|Green|Brown|Orange|Yellow)(\\d{2}d\\d{2}s){1,3}\\b"
+        },
+        {
+          "name": "entity.name.class.bambooswing",
+          "match": "\\bnt[A-Z]\\b"
         }
       ]
     },
