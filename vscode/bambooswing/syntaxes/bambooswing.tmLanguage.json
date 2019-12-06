@@ -76,7 +76,7 @@
         },
         {
           "name": "entity.name.class.bambooswing",
-          "match": "\\b(Width|Sparsity)\\b"
+          "match": "\\b(Spacing|Jitter|Coloring|Radius|Angle|Distortion|Granularity|Amount|Position|Opacity|Pressure|Scatter|Rotation|Scaling|Size|Smudge|Noise|Flow)\\b"
         }
       ]
     },

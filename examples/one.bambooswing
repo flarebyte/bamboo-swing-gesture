@@ -25,8 +25,8 @@ markerRules: MarkerRules =
 
 amplitudeRules: AmplitudeRules =
     when Blue10d15s and Red04d04s then
-        a:001 |> invert |> Sparsity
-        a:002 |> reverse |> Width
+        a:001 |> invert |> Spacing
+        a:002 |> reverse |> Scatter
     when Blue10d15s then 
         a:001 
     when Blue10d15s and not Red04d04s then
