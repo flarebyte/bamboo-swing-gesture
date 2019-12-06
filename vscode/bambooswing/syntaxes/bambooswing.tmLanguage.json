@@ -56,7 +56,7 @@
       "patterns": [
         {
           "name": "keyword.control.bambooswing",
-          "match": "^(settings: Settings|amplitudes: Amplitudes|points: Nodes|edges: Edges) ="
+          "match": "^(settings: Settings|amplitudes: Amplitudes|points: Nodes|edges: Edges|markerRules: MarkerRules) ="
         }
       ]
     },
@@ -108,7 +108,7 @@
       "patterns": [
         {
           "name": "keyword.other.bambooswing",
-          "match": "\\b(if|and|or|not|is)\\b"
+          "match": "\\b(when|then|and|or|not|is)\\b"
         }
       ]
     }
