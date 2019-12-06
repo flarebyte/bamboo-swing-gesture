@@ -17,17 +17,20 @@ amplitudes: Amplitudes =
     a:001 :=  [1/4, 5/4, 6/7]
     a:002 :=  [1/5, 5/4, 5/7]
 
-
 markerRules: MarkerRules =
-    when s:001 is Top_ then Blue10d15s
-    when s:001 is Top_ and s:002 is Left_ then Red04d04s
-    when Blue10d15s then a:001 
-    when Blue10d15s and not Red04d04s then a:002 
+    when s:001 is Top_ then
+        Blue10d15s
+    when s:001 is Top_ and s:002 is Left_ then
+        Red04d04s
 
 amplitudeRules: AmplitudeRules =
     when Blue10d15s and Red04d04s then
-        a:001 |> Sparsity
+        a:001 |> invert |> Sparsity
         a:002 |> reverse |> Width
+    when Blue10d15s then 
+        a:001 
+    when Blue10d15s and not Red04d04s then
+        a:002 
 
 points: Nodes =
     p:002 := ntA; Translate(p:000, 1/3, 2/7)
