@@ -1,0 +1,52 @@
+id-urn: company7/project12/1235775
+license,en: Creative Commons
+license-url,json,en: http://website.com/license
+attribution-name,en-gb: Firstname LastName
+attribution-url,html,en: http://website.com/creator
+title,en: My title
+description,en: Single line description
+metadata-url,rdf,en: http://website.com/meta
+homepage-url,markdown,en: https://github.com/owner/project#readme
+
+settings: Settings =
+    s:001 := Enum(Top_, Bottom_)
+    s:002 := Enum(Left_, Right_)
+    s:003 := Enum(South_, North_, West_)
+
+amplitudes: Amplitudes =
+    a:001 :=  [1/4, 5/4, 6/7]
+    a:002 :=  [1/5, 5/4, 5/7]
+
+markerRules: MarkerRules =
+    when s:001 is Top_ then
+        Blue10d15s
+    when s:001 is Top_ and s:002 is Left_ then
+        Red04d04s
+
+amplitudeRules: AmplitudeRules =
+    when Blue10d15s and Red04d04s then
+        a:001 |> invert |> Spacing
+        a:002 |> reverse |> Scatter
+    when Blue10d15s then 
+        a:001 
+    when Blue10d15s and not Red04d04s then
+        a:002 
+
+points: Nodes =
+    p:002 := ntA; Translate(p:000, 1/3, 2/7)
+    p:003 := ntB; Translate(p:000, 1/4, 3/7)
+    p:004 := ;Translate(p:003, 1/5, 6/7)
+    p:005 := ntC; Translate(p:4, 1/5, 6/7)
+    p:006 := ; Line(p:004, p:005) Line(p:006, p:002 |> Inter
+    p:007 := ; Line(p:004, p:005) Circle(p:006, 3/4) |> Inter
+    p:008 := ; Circle(p:004, 4/5) Circle(p:006, 3/4) |> Inter
+    p:009 := ; Bezier(p:001, p:002, p:002) Circle(p:006, 3/4) |> Inter
+    p:010 := ; Bezier(p:001, p:002, p:003, p:004) Circle(p:006, 3/4) |> Inter
+    
+edges: Edges =
+    p:003 -> p:004 := Blue10d15s -> Line()
+    p:003 -> p:004 := Green05d05s10d10s -> Bezier(p:001,p:002)
+    p:003 -> p:006 := Red04d04s
+    p:003 -> p:005 := Yellow03d03s
+    p:003 -> p:005 := Green05d05s10d10s
+

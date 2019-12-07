@@ -1,0 +1,117 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Bamboo Swing Gesture",
+  "patterns": [
+    {
+      "include": "#keys"
+    },
+    {
+      "include": "#key-types"
+    },
+    {
+      "include": "#urls"
+    },
+    {
+      "include": "#classes"
+    },
+    {
+      "include": "#refs"
+    },
+    {
+      "include": "#fractions"
+    },
+    {
+      "include": "#user-value"
+    },
+    {
+      "include": "#logic"
+    }
+  ],
+  "repository": {
+    "keys": {
+      "patterns": [
+        {
+          "name": "keyword.control.bambooswing",
+          "match": "^(license|title|description|attribution-name),[a-z]{2}(-[a-z]{2})?:"
+        },
+        {
+          "name": "keyword.control.bambooswing",
+          "match": "^(id-urn):"
+        },
+        {
+          "name": "keyword.control.bambooswing",
+          "match": "^(attribution-url|license-url|metadata-url|homepage-url),(html|json|markdown|rdf),[a-z]{2}(-[a-z]{2})?:"
+        }
+      ]
+    },
+    "urls": {
+      "patterns": [
+        {
+          "name": "markup.underline.link.bambooswing",
+          "match": "\bhttps://[^\\s]+$"
+        }
+      ]
+    },
+    "key-types": {
+      "patterns": [
+        {
+          "name": "keyword.control.bambooswing",
+          "match": "^(settings: Settings|amplitudes: Amplitudes|points: Nodes|edges: Edges|markerRules: MarkerRules|amplitudeRules: AmplitudeRules) ="
+        }
+      ]
+    },
+    "classes": {
+      "patterns": [
+        {
+          "name": "entity.name.class.bambooswing",
+          "match": "\\b(Enum|Translate|Line|Circle|Inter|Bezier)\\b"
+        },
+        {
+          "name": "entity.name.class.bambooswing",
+          "match": "\\b(LightGray|DarkGray|Red|Purple|Blue|Green|Brown|Orange|Yellow)(\\d{2}d\\d{2}s){1,3}\\b"
+        },
+        {
+          "name": "entity.name.class.bambooswing",
+          "match": "\\bnt[A-Z]\\b"
+        },
+        {
+          "name": "entity.name.class.bambooswing",
+          "match": "\\b(Spacing|Jitter|Coloring|Radius|Angle|Distortion|Granularity|Amount|Position|Opacity|Pressure|Scatter|Rotation|Scaling|Size|Smudge|Noise|Flow)\\b"
+        }
+      ]
+    },
+    "refs": {
+      "patterns": [
+        {
+          "name": "variable.name.bambooswing",
+          "match": "\\b(p|s|a):\\d{3}\\b"
+        }
+      ]
+    },
+    "fractions": {
+      "patterns": [
+        {
+          "name": "constant.numeric.bambooswing",
+          "match": "\\b\\d+(\\\\d+)?\\b"
+        }
+      ]
+    },
+    "user-value": {
+      "patterns": [
+        {
+          "name": "entity.name.tag.bambooswing",
+          "match": "\\b([A-Z]\\w+)_\\b"
+        }
+      ]
+    },
+    "logic": {
+      "patterns": [
+        {
+          "name": "keyword.other.bambooswing",
+          "match": "\\b(when|then|and|or|not|is|reverse|invert)\\b"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.bambooswing"
+}
