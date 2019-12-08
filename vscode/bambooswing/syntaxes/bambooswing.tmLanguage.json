@@ -64,7 +64,7 @@
       "patterns": [
         {
           "name": "entity.name.class.bambooswing",
-          "match": "\\b(Enum|Translate|Line|Circle|Inter|Bezier)\\b"
+          "match": "\\b(Enum|Inter|Translate|Line|Circle|Bezier|Center)\\b"
         },
         {
           "name": "entity.name.class.bambooswing",
@@ -72,7 +72,7 @@
         },
         {
           "name": "entity.name.class.bambooswing",
-          "match": "\\bnt[A-Z]\\b"
+          "match": "\\bnt[0A-Z]\\b"
         },
         {
           "name": "entity.name.class.bambooswing",

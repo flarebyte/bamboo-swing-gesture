@@ -4,6 +4,7 @@ from templating import *
 markerColors = "LightGray|DarkGray|Red|Purple|Blue|Green|Brown|Orange|Yellow"
 amplitudeTransforms = "identity|reverse|invert"
 amplitudeSemantic = "Spacing|Jitter|Coloring|Radius|Angle|Distortion|Granularity|Amount|Position|Opacity|Pressure|Scatter|Rotation|Scaling|Size|Smudge|Noise|Flow"
+nodeTypes = "0,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,k,q,r,s,t,u,v,w,y,z".upper().split(",")
 
 def genFraction():
     denominator = randint(1, 120)
@@ -20,6 +21,7 @@ class BambooGenerator:
         self.markers = set()
         self.markerRules = []
         self.amplitudeRules = []
+        self.points = {}
 
     def genSettings(self, number):
         all = set(enumerationExamples())
@@ -77,13 +79,47 @@ class BambooGenerator:
     def genAmplitudeRules(self, number):
         for i in range(number):
              self.amplitudeRules = self.amplitudeRules + [self.genAmplitudeOneRule()]
-        
+    
+    def genTranslate(self):
+        return "Translate({}, {}, {})".format(choice(self.points.keys()), genFraction(), genFraction())
+
+    def genCircle(self):
+        twoPoints = sample(self.points.keys(), 2)
+        return "Circle({}, {})".format(choice(self.points.keys()), genFraction())
+
+    def genLine(self):
+        twoPoints = sample(self.points.keys(), 2)
+        return "Line({}, {})".format(twoPoints[0], twoPoints[1])
+
+    def genBezier(self):
+        manyPoints = sample(self.points.keys(), 3)
+        return "Bezier({}, {}, {})".format(manyPoints[0], manyPoints[1], manyPoints[2])
+
+    def genBezier2(self):
+        manyPoints = sample(self.points.keys(), 4)
+        return "Bezier({}, {}, {}, {})".format(manyPoints[0], manyPoints[1], manyPoints[2], manyPoints[3])
+
+    def genPoints(self, zeroTranslateNumber, translateNumber, advancedNumber):
+        self.points["p:000"] = "Center"
+        for i in range(1, zeroTranslateNumber):
+            self.points["p:0"+format(i,'02')] = "nt{}; Translate(p:000, {}, {})".format(choice(nodeTypes),genFraction(), genFraction())
+
+        for i in range(1, translateNumber):
+            self.points["p:0"+format(zeroTranslateNumber + i + 1,'02')] = "nt{}; {}".format(choice(nodeTypes), self.genTranslate())
+
+        for i in range(1, advancedNumber):
+            transf = sample([self.genLine(), self.genCircle(), self.genBezier(), self.genLine(), self.genCircle(), self.genBezier(), self.genBezier2()], 2)
+            self.points["p:0"+format(i+translateNumber + zeroTranslateNumber + 2,'02')] = "nt{}; {} {} |> Inter".format(choice(nodeTypes),transf[0], transf[1])
+
+
     def generate(self):
         self.genSettings(randint(4, 9))
         self.genAmplitudes(randint(7, 20))
         self.genMarker(randint(6, 20))
         self.genMarkerRules(randint(3, 20))
         self.genAmplitudeRules(randint(3, 20))
+        self.genPoints(randint(10, 20), randint(5, 20), randint(5, 20))
+
 
 
     def display(self):
@@ -92,6 +128,7 @@ class BambooGenerator:
         print(self.markers)
         print(self.markerRules)
         print(self.amplitudeRules)
+        print(self.points)
 
 
 gen = BambooGenerator()

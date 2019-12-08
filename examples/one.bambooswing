@@ -33,15 +33,16 @@ amplitudeRules: AmplitudeRules =
         a:002 
 
 points: Nodes =
+    p:000 := nt0; Center
     p:002 := ntA; Translate(p:000, 1/3, 2/7)
     p:003 := ntB; Translate(p:000, 1/4, 3/7)
-    p:004 := ;Translate(p:003, 1/5, 6/7)
+    p:004 := nt0; Translate(p:003, 1/5, 6/7)
     p:005 := ntC; Translate(p:4, 1/5, 6/7)
-    p:006 := ; Line(p:004, p:005) Line(p:006, p:002 |> Inter
-    p:007 := ; Line(p:004, p:005) Circle(p:006, 3/4) |> Inter
-    p:008 := ; Circle(p:004, 4/5) Circle(p:006, 3/4) |> Inter
-    p:009 := ; Bezier(p:001, p:002, p:002) Circle(p:006, 3/4) |> Inter
-    p:010 := ; Bezier(p:001, p:002, p:003, p:004) Circle(p:006, 3/4) |> Inter
+    p:006 := nt0; Line(p:004, p:005) Line(p:006, p:002 |> Inter
+    p:007 := nt0; Line(p:004, p:005) Circle(p:006, 3/4) |> Inter
+    p:008 := nt0; Circle(p:004, 4/5) Circle(p:006, 3/4) |> Inter
+    p:009 := nt0; Bezier(p:001, p:002, p:002) Circle(p:006, 3/4) |> Inter
+    p:010 := nt0; Bezier(p:001, p:002, p:003, p:004) Circle(p:006, 3/4) |> Inter
     
 edges: Edges =
     p:003 -> p:004 := Blue10d15s -> Line()
