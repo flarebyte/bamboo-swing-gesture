@@ -9,137 +9,184 @@ metadata-url,rdf,en: http://website.com/meta
 homepage-url,markdown,en: https://github.com/owner/project#readme
 
 settings: Settings =
-    s:001 := Enum(Sprite_, Sasquatch_)
-    s:002 := Enum(Draugr_, Troll_, Mummy_)
-    s:003 := Enum(Wendigo_, Cyclops_, Poltergeist_, Sphinx_)
+    s:001 := Enum(Hippogriff_, Imp_)
+    s:002 := Enum(Angel_, Gnome_, Brownie_)
+    s:003 := Enum(Dwarf_, Demon_, Minotaur_, Dryad_)
+    s:004 := Enum(Sprite_, Witch_, Selkie_, Nymph_, Bugbear_)
+    s:005 := Enum(Harpy_, Dragon_, Sylph_, Centaur_, Ghast_, Siren_)
+    s:006 := Enum(Elemental_, Incubus_, Nix_, Cyclops_, Spectre_, Phoenix_, Elf_)
+    s:007 := Enum(Orc_, Hydra_, Kraken_, Chupacabra_, Genie_, Gargoyle_, Wraith_, Cockatrice_)
+    s:008 := Enum(Roc_, Gremlin_, Unicorn_, Ghoul_, Vampire_, Goblin_, Merman_, Golem_, Wight_)
 
 amplitudes: Amplitudes =
-    a:001 := ['10/26', '11/14', '13/83', '72/86', '12/61', '9/17', '17/71', '13/25', '10/18', '32/35', '30/107', '1/10', '75/115', '6/32', '36/42', '2/63', '7/16', '67/67', '9/111', '26/35', '26/48', '24/91', '38/77', '25/25', '68/118', '30/99']
-    a:002 := ['1/16', '7/11', '87/94', '1/9', '42/76', '7/16', '15/22', '6/29', '9/59', '64/115', '31/65', '50/107', '1/2', '49/51', '9/102', '10/14', '93/102', '84/99', '73/79', '43/117', '13/31', '6/13', '14/40', '91/107', '28/100', '6/44']
-    a:003 := ['42/83', '6/47', '29/29', '24/61', '110/110', '47/62', '2/92', '48/77', '12/57', '9/107', '11/69', '74/81', '30/85', '21/30', '31/110', '2/12', '41/88', '2/2', '12/102', '48/86', '51/74', '14/80', '16/17', '13/61', '6/25', '1/82']
-    a:004 := ['27/29', '3/52', '28/68', '82/101', '14/46', '13/20', '37/87', '44/83', '39/42', '15/19', '11/24', '7/95', '16/18', '10/19', '46/110', '9/16', '82/93', '28/111', '8/11', '10/42', '7/22', '4/15', '3/8', '43/93', '44/44', '26/77']
-    a:005 := ['84/88', '6/83', '5/14', '61/68', '16/28', '16/28', '36/38', '89/112', '7/13', '86/106', '63/84', '17/46', '42/66', '23/24', '45/84', '9/60', '2/35', '1/32', '4/4', '38/38', '18/29', '5/106', '31/74', '25/27', '25/75', '71/82']
-    a:006 := ['24/71', '19/63', '1/3', '5/52', '21/112', '2/8', '5/109', '23/87', '54/84', '32/36', '28/49', '39/51', '41/57', '13/15', '65/81', '72/116', '1/2', '14/61', '86/117', '80/88', '22/73', '32/43', '6/30', '1/1', '50/107', '32/36']
-    a:007 := ['48/108', '28/79', '2/6', '70/112', '11/27', '10/14', '28/34', '34/38', '37/87', '43/97', '34/41', '3/41', '35/45', '16/56', '42/92', '21/55', '6/20', '73/94', '46/100', '9/27', '6/77', '9/21', '34/41', '1/18', '68/94', '25/81']
-    a:008 := ['12/12', '11/11', '13/102', '3/8', '100/104', '35/109', '14/16', '6/28', '2/110', '26/44', '33/38', '14/41', '16/38', '75/119', '52/103', '47/82', '13/32', '7/20', '12/81', '21/110', '2/19', '13/57', '50/102', '13/29', '7/27', '6/14']
+    a:001 := ['41/48', '23/58', '3/4', '68/93', '72/110', '10/81', '1/6', '17/72', '72/76', '51/95', '23/34', '77/93', '45/47', '14/44', '5/86', '21/47', '79/97', '29/90', '1/9', '1/3', '90/96', '1/1', '46/89', '19/42', '7/16', '24/112', '70/102', '35/101', '7/93', '6/18', '76/86', '97/108', '14/68', '47/70', '49/53', '27/28', '1/1', '44/55', '11/114', '37/54', '17/53']
+    a:002 := ['41/106', '51/84', '3/86', '50/68', '20/65', '15/75', '6/23', '19/24', '92/95', '60/102', '6/93', '94/100', '5/15', '41/84', '48/99', '55/69', '1/2', '17/91', '15/17', '14/23', '5/17', '13/88', '65/79', '41/89', '23/59', '16/46', '3/3', '26/38', '36/56', '53/62', '18/60', '1/6', '15/19', '27/74', '50/84', '79/89', '8/13', '28/115', '50/85', '4/65', '3/5']
+    a:003 := ['47/118', '2/2', '39/108', '8/11', '4/40', '28/107', '2/2', '10/88', '33/35', '67/96', '34/35', '54/65', '100/109', '49/85', '63/118', '6/39', '108/108', '1/19', '45/117', '39/55', '52/69', '15/20', '18/28', '53/68', '82/92', '18/43', '115/115', '46/72', '57/105', '11/22', '61/91', '49/90', '19/91', '43/52', '2/18', '17/33', '4/14', '7/34', '17/64', '78/106', '2/34']
+    a:004 := ['53/56', '34/100', '23/41', '37/62', '19/25', '94/120', '20/83', '7/109', '4/7', '103/119', '19/86', '85/114', '25/82', '66/109', '23/51', '21/93', '28/53', '52/54', '1/1', '13/93', '32/73', '46/58', '19/37', '1/48', '23/40', '27/60', '37/102', '16/80', '1/88', '11/14', '2/2', '5/12', '101/103', '4/4', '47/53', '13/36', '71/111', '30/78', '14/107', '58/58', '26/92']
+    a:005 := ['18/38', '3/11', '6/29', '30/45', '68/113', '31/91', '20/118', '18/62', '1/23', '24/93', '25/64', '26/89', '3/14', '68/118', '98/105', '42/53', '6/96', '2/8', '1/65', '11/38', '18/87', '42/53', '24/97', '93/103', '17/58', '52/95', '14/19', '60/80', '22/77', '21/37', '24/31', '83/107', '43/84', '3/10', '13/35', '63/66', '66/102', '7/7', '2/25', '10/49', '27/41']
+    a:006 := ['1/51', '13/28', '25/53', '60/90', '3/46', '68/115', '83/106', '17/23', '19/19', '6/15', '27/72', '8/32', '2/16', '35/63', '5/68', '46/87', '54/65', '41/42', '30/117', '71/104', '30/64', '34/56', '83/91', '44/88', '7/11', '22/67', '83/96', '13/38', '45/77', '3/42', '65/111', '19/24', '29/107', '16/21', '13/19', '40/50', '34/85', '2/2', '76/102', '73/73', '76/92']
+    a:007 := ['95/97', '33/115', '5/9', '58/62', '33/88', '15/51', '53/94', '19/46', '18/76', '26/38', '40/57', '32/112', '56/64', '48/54', '2/3', '24/60', '21/80', '41/76', '82/100', '53/59', '79/90', '21/66', '1/13', '7/13', '10/38', '69/74', '14/15', '57/64', '39/39', '44/83', '2/20', '55/59', '13/100', '4/19', '68/91', '3/18', '2/6', '2/26', '36/67', '16/87', '53/67']
+    a:008 := ['61/90', '7/99', '52/117', '62/63', '58/59', '93/113', '1/1', '10/17', '57/58', '2/8', '39/107', '22/99', '1/34', '56/119', '10/43', '23/74', '7/7', '36/112', '24/74', '2/49', '24/66', '40/60', '53/60', '36/67', '17/77', '6/77', '1/14', '49/113', '16/19', '76/104', '39/63', '68/110', '29/115', '70/112', '45/68', '66/116', '28/32', '39/68', '13/66', '32/33', '16/113']
+    a:009 := ['5/16', '7/80', '35/83', '58/80', '42/108', '26/40', '36/36', '100/102', '45/53', '41/74', '2/3', '5/24', '17/18', '54/80', '1/2', '34/37', '81/92', '46/53', '87/92', '4/7', '55/114', '27/117', '16/21', '76/119', '71/111', '14/36', '11/75', '45/72', '87/113', '97/100', '64/67', '50/77', '70/84', '87/105', '26/116', '3/4', '14/79', '3/4', '55/82', '17/20', '8/12']
+    a:010 := ['10/45', '3/14', '6/112', '95/104', '6/80', '18/80', '14/54', '16/30', '12/47', '34/45', '3/17', '5/5', '7/16', '28/99', '21/103', '6/107', '21/23', '52/119', '14/113', '9/20', '7/24', '8/21', '27/33', '68/114', '46/92', '8/42', '7/7', '15/40', '20/94', '1/36', '84/112', '34/50', '55/71', '1/104', '40/42', '90/112', '100/114', '72/112', '79/113', '11/77', '3/57']
+    a:011 := ['70/76', '26/104', '2/9', '21/51', '27/35', '3/54', '54/89', '28/55', '42/58', '38/60', '55/86', '84/84', '1/12', '2/16', '11/28', '22/28', '34/102', '68/89', '41/93', '43/98', '49/64', '10/110', '4/54', '1/55', '6/27', '49/49', '45/72', '86/90', '70/82', '22/51', '57/101', '23/43', '67/83', '6/22', '21/46', '30/58', '13/26', '2/81', '9/12', '17/40', '29/53']
+    a:012 := ['56/88', '1/11', '48/112', '39/54', '7/14', '13/14', '27/98', '1/8', '42/89', '25/31', '19/117', '15/109', '8/15', '11/13', '1/18', '53/94', '7/105', '7/7', '43/57', '3/5', '4/31', '105/117', '64/67', '7/18', '3/27', '107/118', '19/108', '37/80', '34/95', '15/71', '23/64', '34/55', '10/39', '98/103', '45/91', '56/75', '118/119', '14/15', '20/92', '2/82', '1/21']
+    a:013 := ['31/46', '11/31', '30/85', '1/10', '35/42', '27/55', '120/120', '15/29', '2/72', '6/69', '24/45', '22/32', '23/87', '23/97', '8/14', '1/24', '12/24', '69/115', '9/11', '4/4', '20/27', '3/4', '10/73', '23/47', '31/59', '17/52', '33/111', '85/94', '11/62', '55/112', '3/59', '2/41', '7/83', '28/62', '28/33', '39/84', '14/104', '50/99', '110/112', '30/38', '40/98']
 
 markerRules: MarkerRules =
-    when s:003 is Sphinx_ then
-        Red35d52s
-        DarkGray03d11s
-    when s:001 is Sprite_ and s:001 is Sprite_ then
-        DarkGray77d91s
-    when s:002 is Draugr_ and s:001 is Sprite_ then
-        DarkGray77d91s
-        Brown98d89s
-        DarkGray24d44s
-    when s:001 is Sasquatch_ and s:001 is Sasquatch_ then
-        Red35d52s
-        Purple30d58s
-        Brown26d30s
-    when s:002 is Draugr_ then
-        Red35d52s
-    when s:003 is Wendigo_ and s:001 is Sprite_ then
-        DarkGray03d11s
-    when s:003 is Sphinx_ then
-        Red35d52s
-        Brown26d30s
-    when s:002 is Draugr_ then
-        DarkGray47d37s
-        Red35d52s
-    when s:001 is Sasquatch_ then
-        Blue99d51s
-        Brown26d30s
-    when s:003 is Poltergeist_ and s:001 is Sasquatch_ then
-        DarkGray77d91s
-        Red35d52s
-        Green49d61s
-    when s:001 is Sasquatch_ then
-        DarkGray47d37s
-        Green49d61s
-    when s:003 is Cyclops_ and s:002 is Troll_ then
-        DarkGray03d11s
-    when s:001 is Sprite_ and s:001 is Sprite_ then
-        Red35d52s
-        Yellow10d73s
-        Purple30d58s
-    when s:001 is Sprite_ then
-        Red35d52s
-        Green49d61s
-    when s:002 is Troll_ then
-        Orange56d25s
-        Blue99d51s
-        Brown98d89s
-    when s:002 is Draugr_ and s:002 is Draugr_ then
-        Yellow66d52s
-        DarkGray47d37s
-    when s:001 is Sprite_ then
-        Purple30d58s
-        Brown26d30s
-        Brown98d89s
-    when s:001 is Sasquatch_ then
-        DarkGray24d44s
+    when s:006 is Spectre_ and s:002 is Angel_ then
+        Brown62d75s
+    when s:007 is Genie_ then
+        Yellow36d28s
+        Orange31d76s
+    when s:005 is Centaur_ then
+        Yellow30d99s
+    when s:001 is Hippogriff_ then
+        Yellow68d54s
+    when s:001 is Hippogriff_ then
+        Green94d75s
+    when s:001 is Hippogriff_ then
+        Green94d75s
+        Red06d06s
+    when s:008 is Wight_ and s:008 is Gremlin_ then
+        Yellow36d28s
+        Blue99d07s
+    when s:008 is Merman_ and s:002 is Gnome_ then
+        Red70d83s
+    when s:006 is Spectre_ then
+        Brown37d26s
+        Yellow68d54s
+    when s:004 is Nymph_ then
+        Yellow30d99s
+    when s:005 is Ghast_ then
+        Purple05d59s
+    when s:008 is Vampire_ and s:003 is Minotaur_ then
+        Red43d22s
+    when s:002 is Brownie_ then
+        Yellow30d99s
+        Yellow25d79s
+    when s:007 is Cockatrice_ and s:004 is Selkie_ then
+        Yellow30d99s
+    when s:003 is Dwarf_ and s:007 is Orc_ then
+        Orange75d02s
+    when s:004 is Sprite_ and s:008 is Unicorn_ then
+        Yellow36d28s
+        Blue77d92s
 
 amplitudeRules: AmplitudeRules =
-    when DarkGray77d91s then
-    when Yellow10d73s and DarkGray03d11s then
-        a:004 |> invert |> Smudge
-        a:003 |> reverse |> Granularity
-    when Orange56d25s and DarkGray03d11s then
-        a:003 |> reverse |> Jitter
-    when Brown98d89s then
-        a:001 |> reverse |> Rotation
-    when DarkGray24d44s and Yellow10d73s and Brown98d89s then
-        a:006 |> identity |> Spacing
-    when DarkGray03d11s and Blue99d51s then
-    when Purple30d58s and Brown26d30s then
-        a:002 |> reverse |> Noise
-        a:002 |> identity |> Scaling
-    when DarkGray24d44s and Red35d52s and DarkGray77d91s then
-        a:005 |> invert |> Granularity
-    when Purple30d58s then
+    when Blue77d92s then
         a:002 |> invert |> Size
-        a:008 |> reverse |> Flow
+    when Green94d75s then
+        a:012 |> identity |> Pressure
+        a:005 |> invert |> Jitter
+    when DarkGray68d03s and Purple05d59s then
+    when Brown37d26s then
+        a:008 |> identity |> Size
+    when Yellow25d79s and Purple05d59s and Yellow30d99s then
+    when Red70d83s then
+        a:012 |> reverse |> Amount
+    when Purple21d90s then
+        a:001 |> invert |> Scatter
+        a:012 |> identity |> Scatter
+    when Red06d06s and DarkGray68d03s then
+        a:001 |> identity |> Radius
+    when Purple21d90s and DarkGray68d03s then
+    when Orange31d76s and Brown37d26s then
+        a:007 |> reverse |> Angle
+    when Green94d75s then
+        a:004 |> invert |> Distortion
+    when Orange75d02s and Brown14d17s then
+        a:009 |> invert |> Amount
+        a:001 |> invert |> Flow
+    when Blue77d92s then
+    when Orange31d76s and Green94d75s and Yellow36d28s then
+        a:013 |> reverse |> Coloring
+    when Purple21d90s and Yellow68d54s then
+        a:004 |> identity |> Smudge
+    when Purple21d90s then
+        a:012 |> reverse |> Distortion
+        a:005 |> identity |> Noise
+    when Yellow47d75s and Orange31d76s and Orange75d02s then
+        a:010 |> identity |> Radius
+        a:011 |> reverse |> Jitter
+    when Blue99d07s and Yellow30d99s then
+    when Red06d06s and Yellow25d79s and Orange31d76s then
+        a:001 |> reverse |> Distortion
+        a:007 |> reverse |> Rotation
 
 points: Nodes =
     p:000 := Center
-    p:001 := ntA; Translate(p:000, 13/84, 46/87)
-    p:002 := ntE; Translate(p:000, 4/81, 43/55)
-    p:003 := ntH; Translate(p:000, 26/66, 12/13)
-    p:004 := ntI; Translate(p:000, 5/40, 10/24)
-    p:005 := ntY; Translate(p:000, 22/46, 12/55)
-    p:006 := ntZ; Translate(p:000, 92/120, 35/87)
-    p:007 := ntV; Translate(p:000, 1/10, 1/37)
-    p:008 := ntE; Translate(p:000, 4/73, 99/105)
-    p:009 := ntW; Translate(p:000, 28/68, 59/95)
-    p:010 := nt0; Translate(p:000, 27/32, 34/82)
-    p:011 := ntP; Translate(p:000, 9/23, 29/44)
-    p:012 := ntZ; Translate(p:000, 42/109, 104/108)
-    p:013 := ntV; Translate(p:000, 12/14, 43/49)
-    p:014 := ntH; Translate(p:000, 8/26, 107/116)
-    p:015 := ntQ; Translate(p:000, 21/58, 15/44)
-    p:016 := ntG; Translate(p:000, 28/65, 26/27)
-    p:017 := ntD; Translate(p:000, 29/50, 8/61)
-    p:018 := ntZ; Translate(p:000, 95/114, 18/64)
-    p:019 := ntQ; Translate(p:000, 24/86, 7/14)
-    p:022 := ntL; Translate(p:001, 15/22, 16/71)
-    p:023 := ntB; Translate(p:018, 38/38, 24/67)
-    p:024 := ntH; Translate(p:009, 8/43, 80/119)
-    p:025 := ntE; Translate(p:017, 11/82, 25/55)
-    p:026 := ntZ; Translate(p:019, 20/21, 23/98)
-    p:027 := ntW; Translate(p:009, 72/108, 33/69)
-    p:028 := ntR; Translate(p:011, 5/118, 30/103)
-    p:029 := ntT; Translate(p:027, 50/101, 7/21)
-    p:030 := ntK; Translate(p:024, 16/53, 1/1)
-    p:031 := ntZ; Translate(p:011, 9/38, 45/69)
-    p:032 := ntB; Translate(p:016, 10/44, 19/93)
-    p:033 := ntD; Translate(p:025, 13/78, 20/22)
-    p:034 := ntU; Translate(p:014, 2/58, 6/93)
-    p:035 := ntE; Translate(p:024, 7/65, 14/92)
-    p:036 := ntP; Translate(p:025, 57/97, 6/12)
-    p:039 := ntR; Bezier(p:033, p:031, p:028, p:017) Line(p:019, p:000) |> Inter
-    p:040 := ntR; Line(p:033, p:008) Bezier(p:022, p:032, p:036) |> Inter
-    p:041 := ntV; Line(p:008, p:003) Bezier(p:005, p:024, p:029) |> Inter
-    p:042 := ntM; Circle(p:009, 29/74) Bezier(p:018, p:024, p:041) |> Inter
-    p:043 := ntL; Bezier(p:039, p:003, p:023) Bezier(p:042, p:015, p:039, p:022) |> Inter
-    p:044 := ntQ; Circle(p:013, 9/70) Line(p:025, p:043) |> Inter
+    p:001 := nt0; Translate(p:000, 34/38, 13/118)
+    p:002 := ntL; Translate(p:000, 40/74, 42/82)
+    p:003 := ntQ; Translate(p:000, 29/74, 67/84)
+    p:004 := ntN; Translate(p:000, 26/46, 13/13)
+    p:005 := ntF; Translate(p:000, 4/4, 73/83)
+    p:006 := ntC; Translate(p:000, 77/85, 1/9)
+    p:007 := nt0; Translate(p:000, 44/78, 20/73)
+    p:008 := ntG; Translate(p:000, 11/36, 54/93)
+    p:009 := ntD; Translate(p:000, 37/87, 41/103)
+    p:010 := ntD; Translate(p:000, 1/103, 20/102)
+    p:011 := ntT; Translate(p:000, 25/28, 26/69)
+    p:012 := ntE; Translate(p:000, 3/42, 8/23)
+    p:013 := ntF; Translate(p:000, 21/44, 5/15)
+    p:014 := ntW; Translate(p:000, 50/63, 85/112)
+    p:015 := ntK; Translate(p:000, 30/104, 53/53)
+    p:016 := ntT; Translate(p:000, 1/9, 22/31)
+    p:017 := ntJ; Translate(p:000, 4/59, 42/43)
+    p:018 := ntA; Translate(p:000, 42/81, 1/22)
+    p:019 := ntR; Translate(p:000, 13/64, 54/74)
+    p:022 := ntP; Translate(p:010, 50/57, 6/17)
+    p:023 := ntL; Translate(p:014, 38/69, 37/66)
+    p:024 := ntE; Translate(p:002, 52/96, 45/53)
+    p:025 := ntY; Translate(p:006, 45/98, 3/6)
+    p:026 := ntG; Translate(p:004, 1/22, 55/91)
+    p:027 := ntC; Translate(p:016, 14/32, 17/18)
+    p:028 := ntK; Translate(p:018, 80/102, 59/92)
+    p:029 := ntK; Translate(p:009, 4/19, 3/22)
+    p:030 := nt0; Translate(p:016, 54/88, 3/53)
+    p:031 := ntP; Translate(p:025, 44/53, 1/13)
+    p:032 := ntI; Translate(p:027, 5/7, 1/57)
+    p:033 := ntE; Translate(p:031, 12/12, 21/87)
+    p:036 := ntM; Bezier(p:028, p:031, p:033, p:002) Bezier(p:009, p:001, p:030) |> Inter
+    p:037 := ntO; Circle(p:005, 1/10) Line(p:003, p:002) |> Inter
+    p:038 := ntV; Circle(p:015, 100/104) Line(p:026, p:010) |> Inter
+    p:039 := ntE; Circle(p:006, 64/102) Bezier(p:012, p:014, p:038) |> Inter
+    p:040 := ntW; Circle(p:038, 22/68) Circle(p:016, 3/59) |> Inter
+    p:041 := ntY; Circle(p:026, 20/41) Circle(p:011, 5/5) |> Inter
+    p:042 := nt0; Line(p:039, p:022) Bezier(p:013, p:026, p:005) |> Inter
+    p:043 := ntZ; Circle(p:005, 74/92) Circle(p:003, 18/79) |> Inter
+    p:044 := ntQ; Circle(p:037, 67/90) Bezier(p:015, p:040, p:027) |> Inter
+    p:045 := ntV; Circle(p:025, 31/108) Line(p:042, p:028) |> Inter
+    p:046 := ntJ; Bezier(p:001, p:017, p:026) Line(p:013, p:039) |> Inter
+    p:047 := ntY; Line(p:041, p:039) Line(p:040, p:036) |> Inter
+    p:048 := ntW; Bezier(p:039, p:047, p:007) Line(p:017, p:012) |> Inter
+    p:049 := ntS; Circle(p:023, 65/66) Bezier(p:003, p:018, p:004) |> Inter
+    p:050 := ntH; Bezier(p:046, p:016, p:018, p:048) Line(p:041, p:037) |> Inter
+    p:051 := ntK; Line(p:016, p:007) Circle(p:030, 24/40) |> Inter
+    p:052 := ntD; Line(p:023, p:043) Bezier(p:051, p:029, p:038) |> Inter
+
+edges: Edges =
+    p:004 -> p:013 := Blue99d07s -> Line()
+    p:042 -> p:037 := Yellow68d54s -> Line()
+    p:015 -> p:033 := Red43d22s -> Line()
+    p:029 -> p:002 := Orange75d02s -> Line()
+    p:049 -> p:040 := Purple05d59s -> Line()
+    p:052 -> p:003 := Blue99d07s -> Line()
+    p:017 -> p:031 := Yellow47d75s -> Line()
+    p:050 -> p:012 := Purple05d59s -> Line()
+    p:047 -> p:032 := Orange31d76s -> Line()
+    p:031 -> p:026 := Red43d22s -> Line()
+    p:017 -> p:019 := Yellow68d54s -> Line()
+    p:041 -> p:002 := Yellow47d75s -> Line()
+    p:013 -> p:004 := Yellow47d75s -> Bezier(p:012, p:002)
+    p:029 -> p:003 := Brown14d17s -> Bezier(p:028, p:006)
+    p:041 -> p:017 := Red06d06s -> Bezier(p:033, p:019)
+    p:012 -> p:037 := Orange75d02s -> Bezier(p:051, p:002)
+    p:024 -> p:017 := Brown14d17s -> Bezier(p:050, p:012)
+    p:052 -> p:050 := Red06d06s -> Bezier(p:041, p:015)
+    p:013 -> p:022 := Purple21d90s -> Bezier(p:016, p:007)
+    p:018 -> p:042 := Orange31d76s -> Bezier(p:009, p:006)
+    p:052 -> p:045 := Blue77d92s -> Bezier(p:037, p:025)
+    p:022 -> p:024 := Purple21d90s -> Bezier(p:036, p:005)
+    p:047 -> p:003 := Brown56d30s -> Bezier(p:029, p:019)
+    p:006 -> p:005 := Purple05d59s -> Bezier(p:042, p:052)

@@ -1,0 +1,138 @@
+id-urn: company7/examples/02
+license,en: Attribution 4.0 International
+license-url,html,en: https://creativecommons.org/licenses/by/4.0/legalcode
+attribution-name,en-gb: Crafted by olih assisted by code generator
+attribution-url,html,en: https://github.com/olih
+title,en: Random valid example 02
+description,en: Single line description for 02
+metadata-url,rdf,en: http://website.com/meta
+homepage-url,markdown,en: https://github.com/owner/project#readme
+
+settings: Settings =
+    s:001 := Enum(Angel_, Homonculus_)
+    s:002 := Enum(Wendigo_, Sprite_, Pegasus_)
+    s:003 := Enum(Centaur_, Kobold_, Genie_, Gnome_)
+    s:004 := Enum(Hippogriff_, Ogre_, Valkyrie_, Ghast_, Gremlin_)
+    s:005 := Enum(Draugr_, Faun_, Hydra_, Nix_, Brownie_, Hag_)
+
+amplitudes: Amplitudes =
+    a:001 := ['4/4', '46/90', '68/72', '4/4', '26/31', '104/111', '99/109', '35/80', '6/71', '62/94', '8/97', '19/48', '25/29', '24/78', '3/63', '63/106', '1/27', '66/103', '17/19', '80/109', '72/104', '29/69', '4/6', '103/113', '1/4', '16/31', '9/31', '9/84', '3/8', '1/1', '86/91', '17/24']
+    a:002 := ['3/31', '66/106', '17/37', '31/59', '25/30', '44/72', '28/39', '25/93', '5/38', '49/49', '11/27', '9/9', '20/23', '8/17', '12/55', '38/52', '6/20', '9/111', '70/88', '1/105', '1/71', '27/65', '26/120', '19/64', '68/70', '13/57', '63/71', '9/102', '19/118', '42/106', '61/94', '60/105']
+    a:003 := ['8/67', '10/10', '28/48', '3/3', '55/56', '107/111', '79/88', '29/116', '28/70', '1/68', '26/43', '65/81', '14/100', '3/21', '34/83', '76/107', '26/48', '76/112', '82/86', '26/65', '82/114', '28/30', '94/95', '64/118', '8/22', '6/33', '67/96', '10/26', '69/88', '6/15', '87/88', '77/105']
+    a:004 := ['6/6', '76/84', '95/118', '67/107', '25/66', '26/83', '38/90', '26/74', '44/47', '4/79', '32/68', '15/29', '43/52', '42/70', '18/73', '82/85', '50/92', '34/61', '5/72', '5/80', '12/94', '1/64', '7/76', '64/85', '6/17', '8/119', '8/67', '7/10', '48/75', '61/80', '4/30', '5/13']
+    a:005 := ['3/10', '1/1', '55/61', '41/62', '45/68', '11/97', '6/41', '31/56', '1/4', '40/44', '3/4', '46/47', '34/117', '49/68', '39/60', '29/51', '3/33', '73/82', '13/71', '3/96', '19/83', '6/15', '67/77', '4/22', '1/5', '84/89', '34/119', '11/61', '5/84', '16/27', '7/38', '13/35']
+    a:006 := ['102/116', '51/51', '2/56', '8/22', '99/106', '39/50', '38/117', '89/89', '52/102', '67/101', '13/52', '8/18', '9/38', '18/19', '39/58', '62/72', '2/2', '4/76', '14/33', '61/63', '63/67', '60/80', '104/112', '39/111', '10/30', '1/47', '19/28', '6/30', '5/25', '9/43', '12/45', '23/108']
+    a:007 := ['42/64', '22/107', '38/38', '14/56', '25/25', '13/76', '6/11', '69/94', '100/102', '20/38', '5/12', '19/98', '11/20', '57/106', '15/21', '75/77', '17/71', '32/83', '79/112', '1/17', '7/9', '16/53', '23/34', '46/113', '34/114', '28/98', '39/109', '23/118', '3/4', '82/95', '1/1', '22/57']
+    a:008 := ['2/2', '1/4', '59/65', '107/113', '2/22', '88/107', '7/8', '60/68', '7/14', '75/86', '9/26', '12/31', '23/44', '16/53', '106/119', '43/119', '88/113', '1/9', '86/105', '63/113', '45/79', '70/72', '49/113', '5/14', '118/120', '35/39', '55/102', '33/87', '23/73', '46/86', '28/74', '4/14']
+    a:009 := ['22/41', '68/95', '2/15', '67/113', '74/87', '1/2', '21/91', '3/55', '8/24', '29/71', '4/6', '65/114', '2/20', '26/71', '13/82', '2/104', '3/4', '2/49', '32/111', '4/9', '74/86', '19/74', '79/100', '45/46', '5/12', '20/26', '25/89', '59/65', '30/35', '37/90', '30/101', '44/66']
+    a:010 := ['32/42', '16/73', '65/93', '74/99', '9/26', '44/85', '4/8', '5/5', '11/18', '28/65', '4/8', '37/52', '14/22', '38/94', '10/65', '10/39', '8/82', '2/2', '3/9', '67/83', '19/37', '16/43', '13/23', '10/80', '47/51', '36/55', '3/3', '12/27', '3/21', '5/23', '39/62', '9/12']
+
+markerRules: MarkerRules =
+    when s:001 is Angel_ and s:001 is Homonculus_ then
+        Blue11d42s
+    when s:004 is Ghast_ then
+        LightGray47d74s
+    when s:001 is Angel_ then
+        Blue33d05s
+        Blue91d15s
+    when s:002 is Pegasus_ then
+        DarkGray89d74s
+    when s:002 is Pegasus_ then
+        Purple63d03s
+        Yellow80d24s
+        Yellow01d17s
+    when s:004 is Gremlin_ and s:002 is Wendigo_ then
+        Blue11d42s
+        Green03d78s
+        DarkGray89d74s
+    when s:003 is Centaur_ then
+        LightGray47d74s
+        Purple42d03s
+    when s:002 is Wendigo_ then
+        Blue11d42s
+    when s:004 is Ogre_ and s:001 is Angel_ then
+        Yellow90d33s
+        Yellow80d24s
+    when s:002 is Pegasus_ then
+        Purple93d23s
+        Blue66d57s
+    when s:004 is Ghast_ and s:004 is Gremlin_ then
+        DarkGray60d46s
+        Blue66d57s
+        Blue33d05s
+    when s:003 is Kobold_ and s:002 is Pegasus_ then
+        Blue33d05s
+    when s:003 is Gnome_ and s:005 is Faun_ then
+        Blue11d42s
+        Green99d77s
+        Purple93d23s
+    when s:005 is Brownie_ then
+        Blue33d05s
+        Blue66d57s
+        Green99d77s
+
+amplitudeRules: AmplitudeRules =
+    when Yellow90d33s and Yellow01d17s then
+        a:005 |> invert |> Pressure
+    when DarkGray89d74s and Yellow90d33s then
+        a:002 |> invert |> Radius
+        a:003 |> invert |> Pressure
+    when Yellow80d24s and Yellow01d17s and Blue91d15s then
+    when Purple93d23s and Blue91d15s and Purple63d03s then
+    when LightGray47d74s then
+
+points: Nodes =
+    p:000 := Center
+    p:001 := ntP; Translate(p:000, 4/59, 89/107)
+    p:002 := ntY; Translate(p:000, 41/66, 22/36)
+    p:003 := ntJ; Translate(p:000, 3/4, 12/21)
+    p:004 := ntC; Translate(p:000, 67/70, 35/58)
+    p:005 := ntH; Translate(p:000, 4/117, 1/11)
+    p:006 := ntR; Translate(p:000, 18/24, 58/100)
+    p:007 := ntZ; Translate(p:000, 53/79, 3/77)
+    p:008 := ntD; Translate(p:000, 83/88, 29/111)
+    p:009 := ntP; Translate(p:000, 13/52, 25/88)
+    p:010 := ntG; Translate(p:000, 94/111, 2/5)
+    p:011 := ntD; Translate(p:000, 5/12, 14/109)
+    p:012 := ntB; Translate(p:000, 1/5, 5/20)
+    p:013 := ntV; Translate(p:000, 24/72, 7/58)
+    p:016 := ntC; Translate(p:000, 72/100, 7/8)
+    p:017 := ntQ; Translate(p:016, 55/104, 83/84)
+    p:018 := ntM; Translate(p:012, 71/77, 16/83)
+    p:019 := ntK; Translate(p:001, 20/69, 50/110)
+    p:020 := ntM; Translate(p:000, 6/8, 85/90)
+    p:021 := ntG; Translate(p:019, 12/18, 9/10)
+    p:022 := ntA; Translate(p:011, 2/7, 22/81)
+    p:023 := ntH; Translate(p:000, 72/120, 41/108)
+    p:024 := ntL; Translate(p:017, 7/26, 5/7)
+    p:025 := ntK; Translate(p:018, 8/17, 89/95)
+    p:026 := ntE; Translate(p:021, 69/112, 8/117)
+    p:027 := ntK; Translate(p:020, 41/103, 15/24)
+    p:030 := ntO; Bezier(p:026, p:007, p:025) Line(p:008, p:004) |> Inter
+    p:031 := ntH; Bezier(p:024, p:007, p:017, p:016) Line(p:004, p:009) |> Inter
+    p:032 := ntT; Line(p:026, p:007) Bezier(p:004, p:027, p:013, p:000) |> Inter
+    p:033 := ntK; Circle(p:026, 4/14) Bezier(p:023, p:030, p:000) |> Inter
+    p:034 := ntI; Bezier(p:001, p:022, p:033, p:031) Line(p:033, p:012) |> Inter
+    p:035 := ntH; Bezier(p:025, p:027, p:026) Bezier(p:027, p:021, p:025) |> Inter
+    p:036 := ntS; Line(p:012, p:001) Circle(p:027, 20/22) |> Inter
+    p:037 := ntC; Circle(p:021, 7/27) Circle(p:027, 11/13) |> Inter
+    p:038 := ntL; Line(p:007, p:020) Circle(p:005, 1/90) |> Inter
+    p:039 := ntN; Bezier(p:013, p:026, p:033) Bezier(p:024, p:019, p:032) |> Inter
+    p:040 := ntJ; Line(p:012, p:037) Bezier(p:009, p:021, p:030, p:011) |> Inter
+    p:041 := ntR; Line(p:024, p:025) Bezier(p:036, p:032, p:040, p:005) |> Inter
+    p:042 := ntS; Bezier(p:012, p:039, p:016) Bezier(p:008, p:022, p:037, p:001) |> Inter
+    p:043 := ntB; Line(p:001, p:004) Line(p:040, p:037) |> Inter
+    p:044 := ntP; Bezier(p:035, p:019, p:023, p:026) Circle(p:006, 63/90) |> Inter
+    p:045 := ntR; Bezier(p:027, p:017, p:020) Circle(p:037, 77/102) |> Inter
+
+edges: Edges =
+    p:002 -> p:006 := Green03d78s -> Line()
+    p:022 -> p:010 := DarkGray89d74s -> Line()
+    p:001 -> p:042 := Green03d78s -> Line()
+    p:031 -> p:021 := DarkGray89d74s -> Line()
+    p:040 -> p:021 := Green03d78s -> Line()
+    p:024 -> p:042 := Blue11d42s -> Bezier(p:020, p:021)
+    p:035 -> p:018 := Yellow80d24s -> Bezier(p:016, p:043)
+    p:001 -> p:016 := Red86d87s -> Bezier(p:039, p:030)
+    p:025 -> p:006 := Yellow80d24s -> Bezier(p:030, p:018)
+    p:016 -> p:000 := Yellow80d24s -> Bezier(p:025, p:004)

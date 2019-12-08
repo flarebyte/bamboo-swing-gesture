@@ -23,6 +23,7 @@ class BambooGenerator:
         self.markerRules = []
         self.amplitudeRules = []
         self.points = {}
+        self.edges = []
 
     def genSettings(self, number):
         all = set(enumerationExamples())
@@ -112,6 +113,15 @@ class BambooGenerator:
             transf = sample([self.genLine(), self.genCircle(), self.genBezier(), self.genLine(), self.genCircle(), self.genBezier(), self.genBezier2()], 2)
             self.points["p:0"+format(i+translateNumber + zeroTranslateNumber + 2,'02')] = "nt{}; {} {} |> Inter".format(choice(nodeTypes),transf[0], transf[1])
 
+    def genEdges(self, lineNumber, bezierNumber):
+        actions = choice(list(self.markers))
+        for i in range(1, lineNumber):
+            manyPoints = sample(self.points.keys(), 2)
+            self.edges = self.edges + ["{} -> {} := {} -> Line()".format(manyPoints[0], manyPoints[1], choice(list(self.markers)))]
+
+        for i in range(1, lineNumber):
+            manyPoints = sample(self.points.keys(), 4)
+            self.edges = self.edges + ["{} -> {} := {} -> Bezier({}, {})".format(manyPoints[0], manyPoints[1], choice(list(self.markers)), manyPoints[2], manyPoints[3])]
 
     def generate(self):
         self.genSettings(randint(4, 9))
@@ -120,16 +130,7 @@ class BambooGenerator:
         self.genMarkerRules(randint(3, 20))
         self.genAmplitudeRules(randint(3, 20))
         self.genPoints(randint(10, 20), randint(5, 20), randint(5, 20))
-
-
-
-    def display(self):
-        print(self.settings)
-        print(self.amplitudes)
-        print(self.markers)
-        print(self.markerRules)
-        print(self.amplitudeRules)
-        print(self.points)
+        self.genEdges(randint(5, 20), randint(5, 20))
 
     def asLines(self):
         lines = header(format(self.id, '02'))
@@ -163,12 +164,17 @@ class BambooGenerator:
         for key in pointsKeys:
            lines = lines + ["    {} := {}".format(key, self.points[key])]
 
+        lines = lines + ['', 'edges: Edges =']
+        for edge in (self.edges):
+           lines = lines + ["    {}".format(edge)]
+
         return lines
     
     def saveAsFile(self):
         with open('examples/sample{}.bambooswing'.format(format(self.id, '02')), 'w') as text_file:
             text_file.writelines(map(lambda x: x + "\n", self.asLines()))
 
-gen = BambooGenerator(1)
-gen.generate()
-gen.saveAsFile()
+for i in range(1, 5):
+    gen = BambooGenerator(i)
+    gen.generate()
+    gen.saveAsFile()
