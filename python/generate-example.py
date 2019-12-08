@@ -134,11 +134,15 @@ class BambooGenerator:
     def asLines(self):
         lines = header(format(self.id, '02'))
         lines = lines + ['settings: Settings =']
-        for key in (self.settings.keys()):
+        settingsKeys = self.settings.keys()
+        settingsKeys.sort()
+        for key in settingsKeys:
            lines = lines + ["    {} := Enum({})".format(key, ", ".join(list(self.settings[key])))]
         
         lines = lines + ['', 'amplitudes: Amplitudes =']
-        for key in (self.amplitudes.keys()):
+        amplitudeKeys = self.amplitudes.keys()
+        amplitudeKeys.sort()
+        for key in amplitudeKeys:
            lines = lines + ["    {} := {}".format(key, self.amplitudes[key])]
         
         lines = lines + ['', 'markerRules: MarkerRules =']
@@ -154,7 +158,9 @@ class BambooGenerator:
                lines = lines + ["        {}".format(action)]
 
         lines = lines + ['', 'points: Nodes =']
-        for key in (self.points.keys()):
+        pointsKeys = self.points.keys()
+        pointsKeys.sort()
+        for key in pointsKeys:
            lines = lines + ["    {} := {}".format(key, self.points[key])]
 
         return lines
