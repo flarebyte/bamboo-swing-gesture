@@ -15,7 +15,8 @@ def genFractions(number):
     return [genFraction() for i in range(1, number)]
 
 class BambooGenerator:
-    def __init__(self):
+    def __init__(self, id):
+        self.id = id
         self.settings = {}
         self.amplitudes = {}
         self.markers = set()
@@ -130,7 +131,38 @@ class BambooGenerator:
         print(self.amplitudeRules)
         print(self.points)
 
+    def asLines(self):
+        lines = header(format(self.id, '02'))
+        lines = lines + ['settings: Settings =']
+        for key in (self.settings.keys()):
+           lines = lines + ["    {} := Enum({})".format(key, ", ".join(list(self.settings[key])))]
+        
+        lines = lines + ['', 'amplitudes: Amplitudes =']
+        for key in (self.amplitudes.keys()):
+           lines = lines + ["    {} := {}".format(key, self.amplitudes[key])]
+        
+        lines = lines + ['', 'markerRules: MarkerRules =']
+        for rule in (self.markerRules):
+           lines = lines + ["    {}".format(rule['when'])]
+           for action in rule['actions']:
+               lines = lines + ["        {}".format(action)]
 
-gen = BambooGenerator()
+        lines = lines + ['', 'amplitudeRules: AmplitudeRules =']
+        for rule in (self.amplitudeRules):
+           lines = lines + ["    {}".format(rule['when'])]
+           for action in rule['actions']:
+               lines = lines + ["        {}".format(action)]
+
+        lines = lines + ['', 'points: Nodes =']
+        for key in (self.points.keys()):
+           lines = lines + ["    {} := {}".format(key, self.points[key])]
+
+        return lines
+    
+    def saveAsFile(self):
+        with open('examples/sample{}.bambooswing'.format(format(self.id, '02')), 'w') as text_file:
+            text_file.writelines(map(lambda x: x + "\n", self.asLines()))
+
+gen = BambooGenerator(1)
 gen.generate()
-gen.display()
+gen.saveAsFile()

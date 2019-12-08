@@ -1,7 +1,5 @@
-
 def header(id):
-    return """
-    id-urn: company7/examples/{0}
+    return map(lambda x : x.strip(), """id-urn: company7/examples/{0}
     license,en: Attribution 4.0 International
     license-url,html,en: https://creativecommons.org/licenses/by/4.0/legalcode
     attribution-name,en-gb: Crafted by olih assisted by code generator
@@ -10,10 +8,10 @@ def header(id):
     description,en: Single line description for {0}
     metadata-url,rdf,en: http://website.com/meta
     homepage-url,markdown,en: https://github.com/owner/project#readme
-    """.format(id)
+    """.format(id).split("\n"))
 
 def formatAsEnumValue(str):
-    return str.capitalize() + "_"
+    return "".join(map(lambda s: s.capitalize(), str.split())) + "_"
 
 # Examples from https://github.com/dariusk/corpora/blob/master/data/mythology/monsters.json
 # License CC0 license
