@@ -2,6 +2,8 @@ from random import choice, sample, randint
 from templating import *
 
 markerColors = "LightGray|DarkGray|Red|Purple|Blue|Green|Brown|Orange|Yellow"
+amplitudeTransforms = "identity|reverse|invert"
+amplitudeSemantic = "Spacing|Jitter|Coloring|Radius|Angle|Distortion|Granularity|Amount|Position|Opacity|Pressure|Scatter|Rotation|Scaling|Size|Smudge|Noise|Flow"
 
 def genFraction():
     denominator = randint(1, 120)
@@ -17,6 +19,7 @@ class BambooGenerator:
         self.amplitudes = {}
         self.markers = set()
         self.markerRules = []
+        self.amplitudeRules = []
 
     def genSettings(self, number):
         all = set(enumerationExamples())
@@ -47,19 +50,40 @@ class BambooGenerator:
             ands = ands + [self.genMarkerRuleStatement()]
         elif randint(1, 4) == 1:
             ands = ands + [self.genMarkerRuleStatement()]
-        return " and ".join(ands)
+        whenConds = "when {} then".format(" and ".join(ands))
+        actions = sample(list(self.markers), randint(1,3))
+        return {"when": whenConds, "actions": actions}
 
     def genMarkerRules(self, number):
         results = []
         for i in range(number):
             results = results + [self.genMarkerRule()]
         self.markerRules = results
-    
+
+    def genAmplitudeOneAction(self):
+        amplitudeVar = choice(self.amplitudes.keys())
+        transformOps = choice("|".split(amplitudeTransforms))
+        semantic = choice("|".split(amplitudeSemantic))
+        return "{} |> {} |> {}".format(amplitudeVar, transformOps, semantic)
+
+    def genAmplitudeOneRule(self):
+        conds = sample(list(self.markers), randint(1,3))
+        whenConds = "when {} then".format(" and ".join(conds))
+        actions = []
+        for i in range(1, randint(1, 3)):
+           actions = actions + [self.genAmplitudeOneAction()]
+        return {"when": whenConds, "actions": actions}
+
+    def genAmplitudeRules(self, number):
+        for i in range(number):
+             self.amplitudeRules = self.amplitudeRules + [self.genAmplitudeOneRule()]
+        
     def generate(self):
         self.genSettings(randint(4, 9))
         self.genAmplitudes(randint(7, 20))
         self.genMarker(randint(6, 20))
         self.genMarkerRules(randint(3, 20))
+        self.genAmplitudeRules(randint(3, 20))
 
 
     def display(self):
@@ -67,6 +91,7 @@ class BambooGenerator:
         print(self.amplitudes)
         print(self.markers)
         print(self.markerRules)
+        print(self.amplitudeRules)
 
 
 gen = BambooGenerator()

@@ -108,7 +108,7 @@
       "patterns": [
         {
           "name": "keyword.other.bambooswing",
-          "match": "\\b(when|then|and|or|not|is|reverse|invert)\\b"
+          "match": "\\b(when|then|and|or|not|is|reverse|invert|identity)\\b"
         }
       ]
     }
