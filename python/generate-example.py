@@ -1,9 +1,9 @@
 from random import choice, sample, randint
 from templating import *
 
-markerColors = "LightGray|DarkGray|Red|Purple|Blue|Green|Brown|Orange|Yellow"
-amplitudeTransforms = "identity|reverse|invert"
-amplitudeSemantic = "Spacing|Jitter|Coloring|Radius|Angle|Distortion|Granularity|Amount|Position|Opacity|Pressure|Scatter|Rotation|Scaling|Size|Smudge|Noise|Flow"
+markerColors = "LightGray|DarkGray|Red|Purple|Blue|Green|Brown|Orange|Yellow".split("|")
+amplitudeTransforms = "identity|reverse|invert".split("|")
+amplitudeSemantic = "Spacing|Jitter|Coloring|Radius|Angle|Distortion|Granularity|Amount|Position|Opacity|Pressure|Scatter|Rotation|Scaling|Size|Smudge|Noise|Flow".split("|")
 nodeTypes = "0,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,k,q,r,s,t,u,v,w,y,z".upper().split(",")
 
 def genFraction():
@@ -37,7 +37,7 @@ class BambooGenerator:
 
     def genMarker(self, number):   
         for i in range(number):
-            prefix = choice(markerColors.split("|"))
+            prefix = choice(markerColors)
             dots = format(randint(1,99),'02')
             spaces = format(randint(1,99),'02')
             self.markers.add("{}{}d{}s".format(prefix, dots, spaces))
@@ -65,8 +65,8 @@ class BambooGenerator:
 
     def genAmplitudeOneAction(self):
         amplitudeVar = choice(self.amplitudes.keys())
-        transformOps = choice("|".split(amplitudeTransforms))
-        semantic = choice("|".split(amplitudeSemantic))
+        transformOps = choice(amplitudeTransforms)
+        semantic = choice(amplitudeSemantic)
         return "{} |> {} |> {}".format(amplitudeVar, transformOps, semantic)
 
     def genAmplitudeOneRule(self):
