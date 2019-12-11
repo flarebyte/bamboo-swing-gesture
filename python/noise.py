@@ -1,4 +1,7 @@
 from PIL import Image
+import numpy
 
-img = Image.new('RGB', (60, 30), color = 'red')
-img.save('../temp/pil_red.png')
+numpy.random.seed(0)
+zz = numpy.random.rand(3000, 4000)
+img = Image.fromarray(zz, mode='L')
+img.save('../temp/pil_noise.png')
